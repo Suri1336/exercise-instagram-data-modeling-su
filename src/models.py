@@ -44,7 +44,7 @@ class Post(Base):
     # Here we define columns for the table person
     # Notice that each column is also a normal Python instance attribute.
     id = Column(Integer, primary_key=True)
-    user_id = relationship(User)
+    user_id = Column(Integer,ForeignKey('user.id'))
     post_date = Column(String(250), nullable=False)
     post_time = Column(String(250), nullable=False)
     post_caption = Column(String(250), nullable=False)
